@@ -1,10 +1,10 @@
 <?php
 $host = "localhost";
 $user = "root";
-$password = "";
-$database = "hospital_management";
+$pass = "";
+$db   = "hospital_management";
 
-$conn = mysqli_connect($host, $user, $password, $database);
+$conn = mysqli_connect($host, $user, $pass, $db);
 
 if (!$conn) {
     die("Database connection failed: " . mysqli_connect_error());
