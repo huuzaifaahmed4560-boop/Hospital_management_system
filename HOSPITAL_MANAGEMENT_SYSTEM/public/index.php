@@ -19,14 +19,19 @@ $result = mysqli_query($conn, $sql);
 <!DOCTYPE html>
 <html>
 <head>
-<title>Hospital Management System</title>
+<title>Appointments</title>
+<link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 
-<h2>Appointments List</h2>
-<a href="create.php">Add Appointment</a><br><br>
+<header>Hospital Management System</header>
 
-<table border="1" cellpadding="10">
+<div class="container">
+<h2>Appointments List</h2>
+
+<a href="create.php" class="btn">+ Add Appointment</a>
+
+<table>
 <tr>
 <th>ID</th>
 <th>Patient</th>
@@ -43,13 +48,14 @@ $result = mysqli_query($conn, $sql);
 <td><?= $row['doctor_name'] ?></td>
 <td><?= $row['appointment_date'] ?></td>
 <td><?= $row['appointment_time'] ?></td>
-<td>
-<a href="update.php?id=<?= $row['appointment_id'] ?>">Edit</a> |
-<a href="delete.php?id=<?= $row['appointment_id'] ?>">Delete</a>
+<td class="action">
+<a href="update.php?id=<?= $row['appointment_id'] ?>" class="edit">Edit</a>
+<a href="delete.php?id=<?= $row['appointment_id'] ?>" class="delete">Delete</a>
 </td>
 </tr>
 <?php } ?>
-
 </table>
+</div>
+
 </body>
 </html>

@@ -1,164 +1,135 @@
-/* ===== Global Styles ===== */
 * {
     box-sizing: border-box;
-    transition: all 0.3s ease; /* smooth hover transitions */
+    transition: all 0.3s ease;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
     background-color: #eef2f7;
     margin: 0;
     padding: 0;
     color: #333;
 }
 
-h2 {
+header {
+    background: linear-gradient(90deg, #1e90ff, #3498db);
+    color: #fff;
+    padding: 18px;
     text-align: center;
-    color: #34495e;
-    margin-top: 30px;
+    font-size: 22px;
     font-weight: 600;
 }
 
-/* ===== Container ===== */
+h2 {
+    text-align: center;
+    color: #34495e;
+    margin: 25px 0;
+}
+
 .container {
     width: 85%;
     max-width: 1200px;
-    margin: 30px auto;
-    background: #ffffff;
-    padding: 25px 30px;
+    margin: auto;
+    background: #fff;
+    padding: 25px;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-/* ===== Links & Buttons ===== */
 a {
     text-decoration: none;
     color: #1e90ff;
     font-weight: 600;
 }
 
-a:hover {
-    color: #0d6efd;
-}
-
-button {
+.btn {
+    display: inline-block;
     background-color: #1abc9c;
     color: #fff;
-    padding: 10px 20px;
-    border: none;
+    padding: 10px 18px;
     border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
 }
 
-button:hover {
+.btn:hover {
     background-color: #16a085;
-    transform: translateY(-2px);
 }
 
-/* ===== Table Style ===== */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    font-size: 0.95rem;
-    border-radius: 8px;
-    overflow: hidden;
+    margin-top: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-table th {
+th {
     background: linear-gradient(90deg, #1e90ff, #3498db);
-    color: #fff;
-    padding: 12px 15px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    color: white;
+    padding: 12px;
 }
 
-table td {
+td {
     padding: 12px;
     text-align: center;
     border-bottom: 1px solid #eee;
 }
 
-table tr:nth-child(even) {
-    background-color: #f9f9f9;
+tr:nth-child(even) {
+    background: #f9f9f9;
 }
 
-table tr:hover {
-    background-color: #eaf3fc;
+tr:hover {
+    background: #eaf3fc;
 }
 
-/* ===== Form Styles ===== */
+.action a {
+    margin: 0 6px;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.edit { color: #27ae60; }
+.delete { color: #e74c3c; }
+
 form {
-    width: 50%;
-    max-width: 500px;
-    margin: 25px auto;
-    padding: 20px;
-    background-color: #f8fafd;
+    width: 45%;
+    margin: auto;
+    background: #f8fafd;
+    padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-}
-
-input, select {
-    width: 100%;
-    padding: 12px 10px;
-    margin: 8px 0 15px 0;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 0.95rem;
-    outline: none;
-}
-
-input:focus, select:focus {
-    border-color: #1e90ff;
-    box-shadow: 0 0 8px rgba(30,144,255,0.2);
 }
 
 label {
     font-weight: 600;
-    margin-bottom: 5px;
     display: block;
-    color: #555;
+    margin-bottom: 5px;
 }
 
-/* ===== Action Buttons ===== */
-.action a {
-    margin: 0 6px;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-weight: 500;
-    transition: 0.3s;
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
-.action .delete {
-    color: #e74c3c;
+button {
+    width: 100%;
+    background-color: #1e90ff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
 }
 
-.action .delete:hover {
-    background-color: #fceaea;
-    color: #c0392b;
+button:hover {
+    background-color: #0d6efd;
 }
 
-.action .edit {
-    color: #27ae60;
-}
-
-.action .edit:hover {
-    background-color: #eafaf1;
-    color: #1e8449;
-}
-
-/* ===== Responsive ===== */
-@media screen and (max-width: 768px) {
+@media(max-width:768px){
     .container, form {
         width: 90%;
-        padding: 20px;
-    }
-
-    table th, table td {
-        padding: 8px;
-        font-size: 0.85rem;
     }
 }

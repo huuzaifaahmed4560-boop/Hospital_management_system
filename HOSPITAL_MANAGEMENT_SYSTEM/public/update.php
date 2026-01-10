@@ -30,24 +30,30 @@ if(isset($_POST['update'])){
 
 <!DOCTYPE html>
 <html>
-<head><title>Update Appointment</title></head>
+<head>
+<title>Update Appointment</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
 <body>
 
+<header>Hospital Management System</header>
+
+<div class="container">
 <h2>Update Appointment</h2>
 
 <form method="post">
 
-Patient:
+<label>Patient</label>
 <select name="patient_id">
 <?php while($p=mysqli_fetch_assoc($patients)){ ?>
-<option value="<?= $p['patient_id'] ?>" 
+<option value="<?= $p['patient_id'] ?>"
 <?= $p['patient_id']==$data['patient_id']?'selected':'' ?>>
 <?= $p['name'] ?>
 </option>
 <?php } ?>
-</select><br><br>
+</select>
 
-Doctor:
+<label>Doctor</label>
 <select name="doctor_id">
 <?php while($d=mysqli_fetch_assoc($doctors)){ ?>
 <option value="<?= $d['doctor_id'] ?>"
@@ -55,13 +61,18 @@ Doctor:
 <?= $d['name'] ?>
 </option>
 <?php } ?>
-</select><br><br>
+</select>
 
-Date: <input type="date" name="date" value="<?= $data['appointment_date'] ?>"><br><br>
-Time: <input type="time" name="time" value="<?= $data['appointment_time'] ?>"><br><br>
+<label>Date</label>
+<input type="date" name="date" value="<?= $data['appointment_date'] ?>">
 
-<button type="submit" name="update">Update</button>
+<label>Time</label>
+<input type="time" name="time" value="<?= $data['appointment_time'] ?>">
+
+<button type="submit" name="update">Update Appointment</button>
+
 </form>
+</div>
 
 </body>
 </html>

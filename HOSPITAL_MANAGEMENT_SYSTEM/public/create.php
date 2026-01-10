@@ -23,32 +23,43 @@ if(isset($_POST['submit'])){
 
 <!DOCTYPE html>
 <html>
-<head><title>Add Appointment</title></head>
+<head>
+<title>Add Appointment</title>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
 <body>
 
+<header>Hospital Management System</header>
+
+<div class="container">
 <h2>Add Appointment</h2>
 
 <form method="post">
 
-Patient:
+<label>Patient</label>
 <select name="patient_id" required>
 <?php while($p=mysqli_fetch_assoc($patients)){ ?>
 <option value="<?= $p['patient_id'] ?>"><?= $p['name'] ?></option>
 <?php } ?>
-</select><br><br>
+</select>
 
-Doctor:
+<label>Doctor</label>
 <select name="doctor_id" required>
 <?php while($d=mysqli_fetch_assoc($doctors)){ ?>
 <option value="<?= $d['doctor_id'] ?>"><?= $d['name'] ?></option>
 <?php } ?>
-</select><br><br>
+</select>
 
-Date: <input type="date" name="date" required><br><br>
-Time: <input type="time" name="time" required><br><br>
+<label>Date</label>
+<input type="date" name="date" required>
 
-<button type="submit" name="submit">Save</button>
+<label>Time</label>
+<input type="time" name="time" required>
+
+<button type="submit" name="submit">Save Appointment</button>
+
 </form>
+</div>
 
 </body>
 </html>
